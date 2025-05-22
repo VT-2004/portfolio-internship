@@ -1,3 +1,8 @@
+/* Universal Box-Sizing for easier layout */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 /* General Styles */
 :root {
     /* Light Theme Colors */
@@ -64,8 +69,9 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box;  Moved to universal selector */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    font-size: 100%; /* Ensures rem units scale consistently */
 }
 
 .container {
@@ -75,7 +81,7 @@ body {
 }
 
 section {
-    padding: 40px 0;
+    padding: 60px 0; /* Increased padding for better spacing */
     scroll-margin-top: 70px; 
     min-height: calc(100vh - 70px);
     display: flex;
@@ -211,7 +217,7 @@ body[data-theme="dark"] nav ul li a.active {
 }
 
 .menu-toggle {
-    display: none;
+    display: none; /* Hidden by default for desktop */
     background: none;
     border: none;
     color: var(--header-text-light);
@@ -243,15 +249,15 @@ body[data-theme="dark"] .theme-toggle-button {
 
 /* Hero Section (HomePage) */
 #home {
-    /* Use variables for background gradient */
-    background: linear-gradient(var(--home-gradient-start-light), var(--home-gradient-end-light)), url('https://via.placeholder.com/1500x800/2c3e50/ffffff?text=Background+Image') no-repeat center center/cover;
+    /* Updated background image and gradients */
+    background: linear-gradient(to bottom, var(--home-gradient-start-light), var(--home-gradient-end-light)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
     color: var(--header-text-light); /* Text color for home section */
     text-align: center;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
 body[data-theme="dark"] #home {
-    background: linear-gradient(var(--home-gradient-start-dark), var(--home-gradient-end-dark)), url('https://via.placeholder.com/1500x800/2c3e50/ffffff?text=Background+Image') no-repeat center center/cover;
+    background: linear-gradient(to bottom, var(--home-gradient-start-dark), var(--home-gradient-end-dark)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
     color: var(--text-color-dark);
 }
 
@@ -263,7 +269,7 @@ body[data-theme="dark"] #home {
     align-items: center;
     width: 100%;
     max-width: 1000px;
-    gap: 40px;
+    gap: 40px; /* Adjusted gap for better spacing */
     padding: 20px;
 }
 
@@ -301,14 +307,16 @@ body[data-theme="dark"] #home h1 {
 }
 
 .profile-picture {
-    width: 270px;
-    height: 270px;
+    max-width: 270px;
+    height: auto;
+    width: 100%;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 0;
-    border: 5px solid var(--profile-border-light); /* Use variable */
-    box-shadow: 0 0 15px var(--profile-shadow-light); /* Use variable */
+    border: 5px solid var(--profile-border-light);
+    box-shadow: 0 0 15px var(--profile-shadow-light);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 1 / 1; /* Maintain aspect ratio */
 }
 
 body[data-theme="dark"] .profile-picture {
@@ -450,7 +458,8 @@ body[data-theme="dark"] .project-item:hover {
 
 .project-item img {
     width: 100%;
-    height: 200px;
+    /* height: 200px; REMOVED - Using aspect-ratio instead */
+    aspect-ratio: 16 / 9; /* NEW - Maintains aspect ratio */
     object-fit: cover;
     display: block;
 }
@@ -525,7 +534,7 @@ body[data-theme="dark"] .contact-form label {
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-    width: calc(100% - 20px);
+    width: 100%; /* CHANGED: Simplified width due to universal box-sizing */
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid var(--input-border-light); /* Use variable */
@@ -636,6 +645,7 @@ body[data-theme="dark"] footer {
         left: 0;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         padding-bottom: 10px;
+        opacity: 0; /* ADDED for smooth transition */
     }
 
     body[data-theme="dark"] nav ul {
@@ -644,7 +654,7 @@ body[data-theme="dark"] footer {
 
     nav ul.active {
         max-height: 300px;
-        opacity: 1;
+        opacity: 1; /* ADDED for smooth transition */
     }
 
     nav ul li {
@@ -658,7 +668,7 @@ body[data-theme="dark"] footer {
     }
 
     .menu-toggle {
-        display: block;
+        display: block; /* Show menu toggle on small screens */
     }
 
     #home {
@@ -687,8 +697,8 @@ body[data-theme="dark"] footer {
     }
 
     .profile-picture {
-        width: 210px;
-        height: 210px;
+        max-width: 210px; /* Adjusted max-width for smaller screens */
+        height: auto;
     }
 
     section {
@@ -732,12 +742,12 @@ body[data-theme="dark"] footer {
     }
 
     .skill-item i {
-        font-size: 2.8em;
+        font-size: 2.8em; /* Adjusted font size for mobile skills icons */
         margin-bottom: 10px;
     }
 
     .skill-item h3 {
-        font-size: 1em;
+        font-size: 1em; /* Adjusted font size for mobile skills text */
     }
 
     #projects .project-gallery {
@@ -780,7 +790,7 @@ body[data-theme="dark"] footer {
     }
 
     #home .home-layout-container {
-        flex-direction: column;
+        flex-direction: column; /* Keep column for tablets */
         gap: 30px;
     }
 
@@ -811,7 +821,7 @@ body[data-theme="dark"] footer {
     }
 
     .contact-form {
-        max-width: 80%;
+        max-width: 80%; /* Maintain a max-width for the form */
     }
 }
 
@@ -829,6 +839,7 @@ body[data-theme="dark"] footer {
 /* Accessibility: Focus styles for keyboard navigation */
 a:focus, button:focus, input:focus, textarea:focus {
     outline: 2px solid var(--input-focus-border-light);
+    outline-offset: 2px; /* Add a small offset */
 }
 
 body[data-theme="dark"] a:focus,
@@ -836,4 +847,5 @@ body[data-theme="dark"] button:focus,
 body[data-theme="dark"] input:focus,
 body[data-theme="dark"] textarea:focus {
     outline: 2px solid var(--input-focus-border-dark);
+    outline-offset: 2px;
 }
