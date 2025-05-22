@@ -69,7 +69,6 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box;  Moved to universal selector */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
     font-size: 100%; /* Ensures rem units scale consistently */
 }
@@ -458,8 +457,7 @@ body[data-theme="dark"] .project-item:hover {
 
 .project-item img {
     width: 100%;
-    /* height: 200px; REMOVED - Using aspect-ratio instead */
-    aspect-ratio: 16 / 9; /* NEW - Maintains aspect ratio */
+    aspect-ratio: 16 / 9; /* Maintains aspect ratio */
     object-fit: cover;
     display: block;
 }
@@ -534,7 +532,7 @@ body[data-theme="dark"] .contact-form label {
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-    width: 100%; /* CHANGED: Simplified width due to universal box-sizing */
+    width: 100%; /* Simplified width due to universal box-sizing */
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid var(--input-border-light); /* Use variable */
@@ -733,7 +731,8 @@ body[data-theme="dark"] footer {
     }
 
     #skills .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust for smaller screens */
+        /* Adjusted minmax for better fitting on 600px down */
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
         gap: 15px;
     }
 
@@ -766,6 +765,37 @@ body[data-theme="dark"] footer {
         width: 100%;
     }
 }
+
+/* NEW MEDIA QUERY for very small phones (e.g., iPhone SE, older Androids) */
+@media only screen and (max-width: 400px) {
+    #skills .skills-grid {
+        grid-template-columns: 1fr; /* Force a single column for very small screens */
+        gap: 20px; /* Adjust gap when items are stacked */
+        /* Optional: add horizontal padding to the grid if the container isn't enough */
+        /* padding: 0 10px; */ 
+    }
+    .skill-item {
+        max-width: 250px; /* Limit max width of a single skill item */
+        margin-left: auto; /* Center the single skill item */
+        margin-right: auto; /* Center the single skill item */
+        padding: 15px 10px; /* Slightly reduce padding for narrower items */
+    }
+    .skill-item i {
+        font-size: 2.5em; /* Slightly smaller icons for very small screens */
+    }
+    .skill-item h3 {
+        font-size: 0.9em; /* Slightly smaller text for very small screens */
+    }
+
+    /* General adjustments for very small screens if needed */
+    h1 {
+        font-size: 2em; /* Even smaller H1 */
+    }
+    #home p {
+        font-size: 0.9em; /* Even smaller paragraph text */
+    }
+}
+
 
 /* Medium devices (tablets, 601px to 900px) */
 @media only screen and (min-width: 601px) and (max-width: 900px) {
