@@ -26,7 +26,6 @@
     --home-gradient-start-light: rgba(0,0,0,0.6);
     --home-gradient-end-light: rgba(0,0,0,0.6);
     --skill-item-bg-light: white;
-    --skill-icon-color-light: #3498db;
     --skill-shadow-light: rgba(0,0,0,0.1);
 }
 
@@ -57,7 +56,6 @@ body[data-theme="dark"] {
     --home-gradient-start-dark: rgba(0,0,0,0.7);
     --home-gradient-end-dark: rgba(0,0,0,0.7);
     --skill-item-bg-dark: #2a2a4a; /* Darker skill card */
-    --skill-icon-color-dark: #8c7ae6;
     --skill-shadow-dark: rgba(0,0,0,0.3);
     
     background-color: var(--background-color-dark);
@@ -166,7 +164,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow wrapping on very small screens */
 }
 
 .logo {
@@ -248,9 +246,8 @@ body[data-theme="dark"] .theme-toggle-button {
 
 /* Hero Section (HomePage) */
 #home {
-    /* Updated background image and gradients */
     background: linear-gradient(to bottom, var(--home-gradient-start-light), var(--home-gradient-end-light)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
-    color: var(--header-text-light); /* Text color for home section */
+    color: var(--header-text-light);
     text-align: center;
     transition: background 0.3s ease, color 0.3s ease;
 }
@@ -268,7 +265,7 @@ body[data-theme="dark"] #home {
     align-items: center;
     width: 100%;
     max-width: 1000px;
-    gap: 40px; /* Adjusted gap for better spacing */
+    gap: 40px;
     padding: 20px;
 }
 
@@ -289,7 +286,7 @@ body[data-theme="dark"] #home {
 #home h1 {
     font-size: 3.5em;
     margin-bottom: 15px;
-    color: var(--header-text-light); /* Heading color for home section */
+    color: var(--header-text-light);
     text-align: left;
 }
 
@@ -315,7 +312,7 @@ body[data-theme="dark"] #home h1 {
     border: 5px solid var(--profile-border-light);
     box-shadow: 0 0 15px var(--profile-shadow-light);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    aspect-ratio: 1 / 1; /* Maintain aspect ratio */
+    aspect-ratio: 1 / 1;
 }
 
 body[data-theme="dark"] .profile-picture {
@@ -355,7 +352,7 @@ body[data-theme="dark"] .profile-picture {
 }
 
 #about .info-list ul li strong {
-    color: var(--button-bg-light); /* Use variable */
+    color: var(--button-bg-light);
 }
 
 body[data-theme="dark"] #about .info-list ul li strong {
@@ -365,17 +362,17 @@ body[data-theme="dark"] #about .info-list ul li strong {
 /* Skills Section */
 #skills .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid columns */
-    gap: 25px; /* Space between skill items */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
     width: 100%;
-    max-width: 900px; /* Limit overall width */
-    justify-content: center; /* Center the grid items */
+    max-width: 900px;
+    justify-content: center;
     margin-top: 20px;
 }
 
 .skill-item {
     background-color: var(--skill-item-bg-light);
-    padding: 25px 15px;
+    padding: 20px 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px var(--skill-shadow-light);
     text-align: center;
@@ -384,6 +381,7 @@ body[data-theme="dark"] #about .info-list ul li strong {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 80px;
 }
 
 .skill-item:hover {
@@ -400,21 +398,10 @@ body[data-theme="dark"] .skill-item:hover {
     box-shadow: 0 6px 12px rgba(0,0,0,0.4);
 }
 
-.skill-item i {
-    font-size: 3.5em; /* Large icon size */
-    color: var(--skill-icon-color-light);
-    margin-bottom: 15px;
-    transition: color 0.3s ease;
-}
-
-body[data-theme="dark"] .skill-item i {
-    color: var(--skill-icon-color-dark);
-}
-
 .skill-item h3 {
     margin: 0;
     font-size: 1.2em;
-    color: var(--heading-color-light); /* Use heading color for skill names */
+    color: var(--heading-color-light);
 }
 
 body[data-theme="dark"] .skill-item h3 {
@@ -432,7 +419,7 @@ body[data-theme="dark"] .skill-item h3 {
 }
 
 .project-item {
-    background-color: var(--project-item-bg-light); /* Use variable */
+    background-color: var(--project-item-bg-light);
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     overflow: hidden;
@@ -457,7 +444,7 @@ body[data-theme="dark"] .project-item:hover {
 
 .project-item img {
     width: 100%;
-    aspect-ratio: 16 / 9; /* Maintains aspect ratio */
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
 }
@@ -472,7 +459,7 @@ body[data-theme="dark"] .project-item:hover {
 
 .project-info h3 {
     margin-top: 0;
-    color: var(--heading-color-light); /* Use variable */
+    color: var(--heading-color-light);
     text-align: left;
     margin-bottom: 10px;
 }
@@ -483,7 +470,7 @@ body[data-theme="dark"] .project-info h3 {
 
 .project-info p {
     font-size: 0.95em;
-    color: var(--project-text-light); /* Use variable */
+    color: var(--project-text-light);
     margin-bottom: 15px;
 }
 
@@ -505,7 +492,7 @@ body[data-theme="dark"] .project-info p {
 }
 
 #contact .contact-form {
-    background-color: var(--contact-form-bg-light); /* Use variable */
+    background-color: var(--contact-form-bg-light);
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -521,7 +508,7 @@ body[data-theme="dark"] #contact .contact-form {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: var(--text-color-light); /* Use variable */
+    color: var(--text-color-light);
     transition: color 0.3s ease;
 }
 
@@ -532,29 +519,29 @@ body[data-theme="dark"] .contact-form label {
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-    width: 100%; /* Simplified width due to universal box-sizing */
+    width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid var(--input-border-light); /* Use variable */
+    border: 1px solid var(--input-border-light);
     border-radius: 5px;
     font-size: 1em;
     transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    background-color: white; /* Default background for inputs */
-    color: #333; /* Default text color for inputs */
+    background-color: white;
+    color: #333;
 }
 
 body[data-theme="dark"] .contact-form input[type="text"],
 body[data-theme="dark"] .contact-form input[type="email"],
 body[data-theme="dark"] .contact-form textarea {
     border: 1px solid var(--input-border-dark);
-    background-color: #3a3a5a; /* Darker input background */
+    background-color: #3a3a5a;
     color: var(--text-color-dark);
 }
 
 .contact-form input[type="text"]:focus,
 .contact-form input[type="email"]:focus,
 .contact-form textarea:focus {
-    border-color: var(--input-focus-border-light); /* Use variable */
+    border-color: var(--input-focus-border-light);
     outline: none;
 }
 
@@ -572,7 +559,7 @@ body[data-theme="dark"] .contact-form textarea:focus {
 .contact-form button {
     width: 100%;
     padding: 15px;
-    background-color: #2ecc71; /* Keep this green for consistency */
+    background-color: #2ecc71;
     color: white;
     border: none;
     border-radius: 5px;
@@ -608,8 +595,8 @@ body[data-theme="dark"] .contact-form textarea:focus {
 
 /* Footer */
 footer {
-    background-color: var(--footer-bg-light); /* Use variable */
-    color: var(--footer-text-light); /* Use variable */
+    background-color: var(--footer-bg-light);
+    color: var(--footer-text-light);
     text-align: center;
     padding: 20px 0;
     margin-top: 50px;
@@ -626,24 +613,43 @@ body[data-theme="dark"] footer {
 /* Small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     header .container {
+        /* Keep existing flex properties */
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-between; /* This pushes elements to edges */
         align-items: center;
         padding: 15px 20px;
     }
 
+    /* NEW: Set order for elements in the header */
+    .menu-toggle {
+        display: block; /* Ensure it's visible on mobile */
+        order: 1; /* First item (left-most) */
+    }
+
+    .logo {
+        order: 2; /* Second item (middle) */
+        flex-grow: 1; /* Allows logo to take up available space */
+        text-align: center; /* Centers the "VT" text within its expanded space */
+        margin: 0; /* Remove any default margins that might interfere */
+    }
+    
+    .theme-toggle-button {
+        order: 3; /* Third item (right-most) */
+    }
+
+    /* Nav positioning for mobile remains the same (absolute) */
     nav ul {
         flex-direction: column;
         width: 100%;
         max-height: 0;
         overflow: hidden;
-        background-color: var(--header-bg-light); /* Use variable */
-        position: absolute;
+        background-color: var(--header-bg-light);
+        position: absolute; /* Takes nav out of flex flow */
         top: 60px;
         left: 0;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         padding-bottom: 10px;
-        opacity: 0; /* ADDED for smooth transition */
+        opacity: 0;
     }
 
     body[data-theme="dark"] nav ul {
@@ -652,7 +658,7 @@ body[data-theme="dark"] footer {
 
     nav ul.active {
         max-height: 300px;
-        opacity: 1; /* ADDED for smooth transition */
+        opacity: 1;
     }
 
     nav ul li {
@@ -663,10 +669,6 @@ body[data-theme="dark"] footer {
     nav ul li a {
         padding: 10px 0;
         font-size: 1.1em;
-    }
-
-    .menu-toggle {
-        display: block; /* Show menu toggle on small screens */
     }
 
     #home {
@@ -695,7 +697,7 @@ body[data-theme="dark"] footer {
     }
 
     .profile-picture {
-        max-width: 210px; /* Adjusted max-width for smaller screens */
+        max-width: 210px;
         height: auto;
     }
 
@@ -731,22 +733,17 @@ body[data-theme="dark"] footer {
     }
 
     #skills .skills-grid {
-        /* Adjusted minmax for better fitting on 600px down */
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
         gap: 15px;
     }
 
     .skill-item {
-        padding: 20px 10px;
+        padding: 15px 10px; 
+        min-height: 70px;
     }
-
-    .skill-item i {
-        font-size: 2.8em; /* Adjusted font size for mobile skills icons */
-        margin-bottom: 10px;
-    }
-
+    
     .skill-item h3 {
-        font-size: 1em; /* Adjusted font size for mobile skills text */
+        font-size: 1em; 
     }
 
     #projects .project-gallery {
@@ -769,30 +766,26 @@ body[data-theme="dark"] footer {
 /* NEW MEDIA QUERY for very small phones (e.g., iPhone SE, older Androids) */
 @media only screen and (max-width: 400px) {
     #skills .skills-grid {
-        grid-template-columns: 1fr; /* Force a single column for very small screens */
-        gap: 20px; /* Adjust gap when items are stacked */
-        /* Optional: add horizontal padding to the grid if the container isn't enough */
-        /* padding: 0 10px; */ 
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
     .skill-item {
-        max-width: 250px; /* Limit max width of a single skill item */
-        margin-left: auto; /* Center the single skill item */
-        margin-right: auto; /* Center the single skill item */
-        padding: 15px 10px; /* Slightly reduce padding for narrower items */
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 12px 10px;
+        min-height: 60px;
     }
-    .skill-item i {
-        font-size: 2.5em; /* Slightly smaller icons for very small screens */
-    }
+    
     .skill-item h3 {
-        font-size: 0.9em; /* Slightly smaller text for very small screens */
+        font-size: 0.9em;
     }
 
-    /* General adjustments for very small screens if needed */
     h1 {
-        font-size: 2em; /* Even smaller H1 */
+        font-size: 2em;
     }
     #home p {
-        font-size: 0.9em; /* Even smaller paragraph text */
+        font-size: 0.9em;
     }
 }
 
@@ -820,7 +813,7 @@ body[data-theme="dark"] footer {
     }
 
     #home .home-layout-container {
-        flex-direction: column; /* Keep column for tablets */
+        flex-direction: column;
         gap: 30px;
     }
 
@@ -851,7 +844,7 @@ body[data-theme="dark"] footer {
     }
 
     .contact-form {
-        max-width: 80%; /* Maintain a max-width for the form */
+        max-width: 80%;
     }
 }
 
@@ -869,7 +862,7 @@ body[data-theme="dark"] footer {
 /* Accessibility: Focus styles for keyboard navigation */
 a:focus, button:focus, input:focus, textarea:focus {
     outline: 2px solid var(--input-focus-border-light);
-    outline-offset: 2px; /* Add a small offset */
+    outline-offset: 2px;
 }
 
 body[data-theme="dark"] a:focus,
