@@ -1,0 +1,839 @@
+/* General Styles */
+:root {
+    /* Light Theme Colors */
+    --background-color-light: #f4f7f6;
+    --text-color-light: #333;
+    --heading-color-light: #2c3e50;
+    --header-bg-light: #2c3e50;
+    --header-text-light: white;
+    --nav-link-hover-light: #3498db;
+    --button-bg-light: #3498db;
+    --button-text-light: white;
+    --project-item-bg-light: white;
+    --project-text-light: #555;
+    --contact-form-bg-light: white;
+    --input-border-light: #ddd;
+    --input-focus-border-light: #3498db;
+    --footer-bg-light: #2c3e50;
+    --footer-text-light: white;
+    --profile-border-light: white;
+    --profile-shadow-light: rgba(0,0,0,0.3);
+    --home-gradient-start-light: rgba(0,0,0,0.6);
+    --home-gradient-end-light: rgba(0,0,0,0.6);
+    --skill-item-bg-light: white;
+    --skill-icon-color-light: #3498db;
+    --skill-shadow-light: rgba(0,0,0,0.1);
+}
+
+body[data-theme="light"] {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
+body[data-theme="dark"] {
+    /* Dark Theme Colors */
+    --background-color-dark: #1a1a2e; /* Dark background */
+    --text-color-dark: #e0e0e0; /* Light text */
+    --heading-color-dark: #e0e0e0; /* Light headings */
+    --header-bg-dark: #0f0f1a; /* Even darker header */
+    --header-text-dark: #e0e0e0;
+    --nav-link-hover-dark: #8c7ae6; /* Purple-ish hover */
+    --button-bg-dark: #8c7ae6; /* Purple-ish button */
+    --button-text-dark: white;
+    --project-item-bg-dark: #2a2a4a; /* Darker project card */
+    --project-text-dark: #c0c0c0;
+    --contact-form-bg-dark: #2a2a4a; /* Darker form background */
+    --input-border-dark: #444;
+    --input-focus-border-dark: #8c7ae6;
+    --footer-bg-dark: #0f0f1a;
+    --footer-text-dark: #e0e0e0;
+    --profile-border-dark: #8c7ae6; /* Border matches button */
+    --profile-shadow-dark: rgba(0,0,0,0.5);
+    --home-gradient-start-dark: rgba(0,0,0,0.7);
+    --home-gradient-end-dark: rgba(0,0,0,0.7);
+    --skill-item-bg-dark: #2a2a4a; /* Darker skill card */
+    --skill-icon-color-dark: #8c7ae6;
+    --skill-shadow-dark: rgba(0,0,0,0.3);
+    
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    padding: 40px 0;
+    scroll-margin-top: 70px; 
+    min-height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2, h3 {
+    color: var(--heading-color-light); /* Use variable */
+    text-align: center;
+    margin-bottom: 40px;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2,
+body[data-theme="dark"] h3 {
+    color: var(--heading-color-dark); /* Dark theme heading color */
+}
+
+a {
+    text-decoration: none;
+    color: var(--button-bg-light); /* Use button color for links */
+}
+
+a:hover {
+    color: var(--nav-link-hover-light);
+}
+
+body[data-theme="dark"] a {
+    color: var(--nav-link-hover-dark);
+}
+
+body[data-theme="dark"] a:hover {
+    color: var(--nav-link-hover-dark);
+}
+
+
+.button {
+    display: inline-block;
+    background-color: var(--button-bg-light); /* Use variable */
+    color: var(--button-text-light); /* Use variable */
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* Smooth transition */
+    text-align: center;
+}
+
+.button:hover {
+    background-color: var(--nav-link-hover-light); /* Use nav link hover for consistency */
+    transform: translateY(-2px);
+}
+
+body[data-theme="dark"] .button {
+    background-color: var(--button-bg-dark); /* Dark theme button color */
+    color: var(--button-text-dark);
+}
+
+body[data-theme="dark"] .button:hover {
+    background-color: var(--nav-link-hover-dark);
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--header-bg-light); /* Use variable */
+    color: var(--header-text-light); /* Use variable */
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+body[data-theme="dark"] header {
+    background-color: var(--header-bg-dark); /* Dark theme header */
+    color: var(--header-text-dark);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--header-text-light);
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+}
+
+body[data-theme="dark"] .logo {
+    color: var(--header-text-dark);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--header-text-light);
+    font-weight: 400;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    display: block;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--nav-link-hover-light);
+}
+
+body[data-theme="dark"] nav ul li a {
+    color: var(--header-text-dark);
+}
+
+body[data-theme="dark"] nav ul li a:hover,
+body[data-theme="dark"] nav ul li a.active {
+    color: var(--nav-link-hover-dark);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--header-text-light);
+    font-size: 1.8em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+body[data-theme="dark"] .menu-toggle {
+    color: var(--header-text-dark);
+}
+
+.theme-toggle-button {
+    background: none;
+    border: none;
+    color: var(--header-text-light); /* Icon color */
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle-button:hover {
+    transform: scale(1.1);
+}
+
+body[data-theme="dark"] .theme-toggle-button {
+    color: var(--header-text-dark);
+}
+
+/* Hero Section (HomePage) */
+#home {
+    /* Use variables for background gradient */
+    background: linear-gradient(var(--home-gradient-start-light), var(--home-gradient-end-light)), url('https://via.placeholder.com/1500x800/2c3e50/ffffff?text=Background+Image') no-repeat center center/cover;
+    color: var(--header-text-light); /* Text color for home section */
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body[data-theme="dark"] #home {
+    background: linear-gradient(var(--home-gradient-start-dark), var(--home-gradient-end-dark)), url('https://via.placeholder.com/1500x800/2c3e50/ffffff?text=Background+Image') no-repeat center center/cover;
+    color: var(--text-color-dark);
+}
+
+#home .home-layout-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    gap: 40px;
+    padding: 20px;
+}
+
+#home .home-text-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+#home .home-image-content {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    color: var(--header-text-light); /* Heading color for home section */
+    text-align: left;
+}
+
+body[data-theme="dark"] #home h1 {
+    color: var(--text-color-dark);
+}
+
+#home p {
+    font-size: 1.3em;
+    max-width: 700px;
+    margin-bottom: 30px;
+    padding: 0;
+    text-align: left;
+}
+
+.profile-picture {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0;
+    border: 5px solid var(--profile-border-light); /* Use variable */
+    box-shadow: 0 0 15px var(--profile-shadow-light); /* Use variable */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body[data-theme="dark"] .profile-picture {
+    border: 5px solid var(--profile-border-dark);
+    box-shadow: 0 0 15px var(--profile-shadow-dark);
+}
+
+/* About Page */
+#about .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+#about .text-content {
+    flex: 2;
+    min-width: 300px;
+    max-width: 700px;
+    text-align: justify;
+}
+
+#about .info-list {
+    flex: 1;
+    min-width: 250px;
+}
+
+#about .info-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+#about .info-list ul li {
+    margin-bottom: 10px;
+}
+
+#about .info-list ul li strong {
+    color: var(--button-bg-light); /* Use variable */
+}
+
+body[data-theme="dark"] #about .info-list ul li strong {
+    color: var(--button-bg-dark);
+}
+
+/* Skills Section */
+#skills .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid columns */
+    gap: 25px; /* Space between skill items */
+    width: 100%;
+    max-width: 900px; /* Limit overall width */
+    justify-content: center; /* Center the grid items */
+    margin-top: 20px;
+}
+
+.skill-item {
+    background-color: var(--skill-item-bg-light);
+    padding: 25px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--skill-shadow-light);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+body[data-theme="dark"] .skill-item {
+    background-color: var(--skill-item-bg-dark);
+    box-shadow: 0 4px 8px var(--skill-shadow-dark);
+}
+
+body[data-theme="dark"] .skill-item:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.skill-item i {
+    font-size: 3.5em; /* Large icon size */
+    color: var(--skill-icon-color-light);
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+body[data-theme="dark"] .skill-item i {
+    color: var(--skill-icon-color-dark);
+}
+
+.skill-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: var(--heading-color-light); /* Use heading color for skill names */
+}
+
+body[data-theme="dark"] .skill-item h3 {
+    color: var(--heading-color-dark);
+}
+
+
+/* Projects Page */
+#projects .project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+}
+
+.project-item {
+    background-color: var(--project-item-bg-light); /* Use variable */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+body[data-theme="dark"] .project-item {
+    background-color: var(--project-item-bg-dark);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+body[data-theme="dark"] .project-item:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.project-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-info h3 {
+    margin-top: 0;
+    color: var(--heading-color-light); /* Use variable */
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+body[data-theme="dark"] .project-info h3 {
+    color: var(--heading-color-dark);
+}
+
+.project-info p {
+    font-size: 0.95em;
+    color: var(--project-text-light); /* Use variable */
+    margin-bottom: 15px;
+}
+
+body[data-theme="dark"] .project-info p {
+    color: var(--project-text-dark);
+}
+
+.project-info .button {
+    align-self: flex-start;
+}
+
+/* Contact Page */
+#contact .contact-content {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#contact .contact-form {
+    background-color: var(--contact-form-bg-light); /* Use variable */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body[data-theme="dark"] #contact .contact-form {
+    background-color: var(--contact-form-bg-dark);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color-light); /* Use variable */
+    transition: color 0.3s ease;
+}
+
+body[data-theme="dark"] .contact-form label {
+    color: var(--text-color-dark);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--input-border-light); /* Use variable */
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    background-color: white; /* Default background for inputs */
+    color: #333; /* Default text color for inputs */
+}
+
+body[data-theme="dark"] .contact-form input[type="text"],
+body[data-theme="dark"] .contact-form input[type="email"],
+body[data-theme="dark"] .contact-form textarea {
+    border: 1px solid var(--input-border-dark);
+    background-color: #3a3a5a; /* Darker input background */
+    color: var(--text-color-dark);
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--input-focus-border-light); /* Use variable */
+    outline: none;
+}
+
+body[data-theme="dark"] .contact-form input[type="text"]:focus,
+body[data-theme="dark"] .contact-form input[type="email"]:focus,
+body[data-theme="dark"] .contact-form textarea:focus {
+    border-color: var(--input-focus-border-dark);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #2ecc71; /* Keep this green for consistency */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #27ae60;
+}
+
+.form-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+    font-size: 0.9em;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg-light); /* Use variable */
+    color: var(--footer-text-light); /* Use variable */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body[data-theme="dark"] footer {
+    background-color: var(--footer-bg-dark);
+    color: var(--footer-text-dark);
+}
+
+/* Responsive Design with Media Queries */
+
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        background-color: var(--header-bg-light); /* Use variable */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding-bottom: 10px;
+    }
+
+    body[data-theme="dark"] nav ul {
+        background-color: var(--header-bg-dark);
+    }
+
+    nav ul.active {
+        max-height: 300px;
+        opacity: 1;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        padding: 10px 0;
+        font-size: 1.1em;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #home {
+        height: auto;
+        padding: 100px 20px 60px 20px;
+    }
+
+    #home .home-layout-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #home .home-text-content {
+        text-align: center;
+    }
+
+    #home h1 {
+        font-size: 2.2em;
+        text-align: center;
+    }
+
+    #home p {
+        font-size: 0.95em;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .profile-picture {
+        width: 210px;
+        height: 210px;
+    }
+
+    section {
+        padding: 30px 20px;
+        scroll-margin-top: 60px; 
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    #about .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about .text-content,
+    #about .info-list {
+        width: 100%;
+        text-align: center;
+    }
+
+    #about .info-list ul {
+        text-align: left;
+        margin-left: 0;
+        padding-left: 20px;
+    }
+
+    #skills .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust for smaller screens */
+        gap: 15px;
+    }
+
+    .skill-item {
+        padding: 20px 10px;
+    }
+
+    .skill-item i {
+        font-size: 2.8em;
+        margin-bottom: 10px;
+    }
+
+    .skill-item h3 {
+        font-size: 1em;
+    }
+
+    #projects .project-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 25px;
+        width: 100%;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea,
+    .contact-form button {
+        width: 100%;
+    }
+}
+
+/* Medium devices (tablets, 601px to 900px) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    header .container {
+        padding: 15px 30px;
+    }
+
+    nav ul li {
+        margin-left: 20px;
+    }
+
+    #home h1 {
+        font-size: 3em;
+    }
+
+    #home p {
+        font-size: 1.1em;
+    }
+
+    section {
+        padding: 40px 30px;
+    }
+
+    #home .home-layout-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    #home .home-text-content {
+        text-align: center;
+    }
+
+    #home h1 {
+        text-align: center;
+    }
+
+    #home p {
+        text-align: center;
+    }
+
+    #about .content {
+        gap: 30px;
+    }
+
+    #projects .project-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    #skills .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 20px;
+    }
+
+    .contact-form {
+        max-width: 80%;
+    }
+}
+
+/* Large devices (desktops, 901px and up) - Base styles are mostly for this */
+@media only screen and (min-width: 901px) {
+    .container {
+        padding: 20px;
+    }
+
+    header .container {
+        padding: 15px 0;
+    }
+}
+
+/* Accessibility: Focus styles for keyboard navigation */
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 2px solid var(--input-focus-border-light);
+}
+
+body[data-theme="dark"] a:focus,
+body[data-theme="dark"] button:focus,
+body[data-theme="dark"] input:focus,
+body[data-theme="dark"] textarea:focus {
+    outline: 2px solid var(--input-focus-border-dark);
+}
