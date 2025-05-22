@@ -85,6 +85,21 @@ document.addEventListener('DOMContentLoaded', () => {
         navUl.classList.toggle('active');
     });
 
+    // NEW: Close menu if clicking outside of it on mobile
+    document.addEventListener('click', (event) => {
+        // Check if the click is outside the nav and not on the menu toggle itself, and if the nav is currently active
+        if (!navUl.contains(event.target) && !menuToggle.contains(event.target) && navUl.classList.contains('active')) {
+            navUl.classList.remove('active');
+        }
+    });
+
+    // NEW: Close menu if 'Escape' key is pressed
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && navUl.classList.contains('active')) {
+            navUl.classList.remove('active');
+        }
+    });
+
     // Contact Form Validation
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault(); // Prevent actual form submission
