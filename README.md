@@ -77,7 +77,7 @@ The objective of this project is to create a comprehensive personal portfolio we
 You can interact with this portfolio website in two ways:
 
 1.  **Access the Hosted Version (if applicable):**
-    If this project is hosted online, you will find a link to the live website [here](YOUR_DEPLOYED_LINK_HERE -(https://portfolio-internship-seven.vercel.app/)). Simply open this link in your web browser to view the portfolio.
+    If this project is hosted online, you will find a link to the live website [here](https://portfolio-internship-seven.vercel.app/). Simply open this link in your web browser to view the portfolio.
 
 2.  **Run Locally (for developers/reviewers):**
     To view and interact with this project on your local machine, follow these simple steps:
