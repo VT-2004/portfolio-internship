@@ -77,18 +77,17 @@ The objective of this project is to create a comprehensive personal portfolio we
 You can interact with this portfolio website in two ways:
 
 1.  **Access the Hosted Version (if applicable):**
-    If this project is hosted online, you will find a link to the live website [here](YOUR_DEPLOYED_LINK_HERE - *Please replace with your actual deployment link*). Simply open this link in your web browser to view the portfolio.
+    If this project is hosted online, you will find a link to the live website [here](YOUR_DEPLOYED_LINK_HERE -(https://portfolio-internship-seven.vercel.app/)). Simply open this link in your web browser to view the portfolio.
 
 2.  **Run Locally (for developers/reviewers):**
     To view and interact with this project on your local machine, follow these simple steps:
 
     * **Clone the Repository (if applicable):**
         If this project is part of a Git repository, open your terminal or command prompt and run:
-        ```bash
+        ``bash
         git clone (https://github.com/VT-2004/portfolio-internship)
         cd project
-        ```
-        *(Replace `YOUR_REPOSITORY_URL_HERE` and `your-portfolio-project-folder` with actual values if you have a GitHub/GitLab repository.)*
+        ``
 
     * **Download the Files:**
         Alternatively, if you received the files directly, simply ensure you have the `index.html`, `style.css`, `script.js` files, and the `assets` folder (containing `profile.jpg` and `Vikas-res.pdf`) all in the same directory.
