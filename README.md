@@ -72,14 +72,45 @@ The objective of this project is to create a comprehensive personal portfolio we
 
 ---
 
+## How to Use/Run This Project
+
+You can interact with this portfolio website in two ways:
+
+1.  **Access the Hosted Version (if applicable):**
+    If this project is hosted online, you will find a link to the live website [here](YOUR_DEPLOYED_LINK_HERE - *Please replace with your actual deployment link*). Simply open this link in your web browser to view the portfolio.
+
+2.  **Run Locally (for developers/reviewers):**
+    To view and interact with this project on your local machine, follow these simple steps:
+
+    * **Clone the Repository (if applicable):**
+        If this project is part of a Git repository, open your terminal or command prompt and run:
+        ```bash
+        git clone YOUR_REPOSITORY_URL_HERE
+        cd your-portfolio-project-folder
+        ```
+        *(Replace `YOUR_REPOSITORY_URL_HERE` and `your-portfolio-project-folder` with actual values if you have a GitHub/GitLab repository.)*
+
+    * **Download the Files:**
+        Alternatively, if you received the files directly, simply ensure you have the `index.html`, `style.css`, `script.js` files, and the `assets` folder (containing `profile.jpg` and `Vikas-res.pdf`) all in the same directory.
+
+    * **Open `index.html`:**
+        Navigate to the directory where you saved the files.
+        Double-click on the `index.html` file. It will automatically open in your default web browser.
+
+    That's it! The website is entirely client-side, so no special server setup or build process is required to run it locally.
+
+---
+
 ## How to Navigate the Website
 
-1.  **Home**: The landing page introduces the portfolio owner.
-2.  **About**: Learn more about my background, education, and experience. You can also download my resume here.
-3.  **Skills**: Discover the technologies and proficiencies I possess.
-4.  **Projects**: Explore a gallery of my past software development projects with descriptions and live links.
-5.  **Contact**: Use the form to send me a message directly.
-6.  **Theme Toggle**: Click the moon/sun icon in the header to switch between light and dark themes.
+Once the website is open, you can:
+
+* **Use the Navigation Bar**: Click on "Home", "About", "Skills", "Projects", or "Contact" in the header to smoothly scroll to the respective sections. The active section's link will be highlighted.
+* **Scroll Down**: Simply scroll through the page to view all sections sequentially.
+* **Theme Toggle**: Click the moon/sun icon in the top right corner of the header to switch between the light and dark themes. Your preference will be remembered for future visits.
+* **Download Resume**: On the "About" page, click the "Download Resume" button to get a PDF version of my resume.
+* **View Projects**: On the "Projects" page, click the "View Project" button on any project card to open its live demo in a new tab.
+* **Contact Me**: Fill out the form on the "Contact" page with your details and message. The form includes basic validation to ensure all required fields are filled.
 
 ---
 
