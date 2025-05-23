@@ -85,8 +85,8 @@ You can interact with this portfolio website in two ways:
     * **Clone the Repository (if applicable):**
         If this project is part of a Git repository, open your terminal or command prompt and run:
         ```bash
-        git clone YOUR_REPOSITORY_URL_HERE
-        cd your-portfolio-project-folder
+        git clone (https://github.com/VT-2004/portfolio-internship)
+        cd project
         ```
         *(Replace `YOUR_REPOSITORY_URL_HERE` and `your-portfolio-project-folder` with actual values if you have a GitHub/GitLab repository.)*
 
